@@ -1,4 +1,4 @@
-Basic Electron - html + Javascript + Electron
+# next-ssr-gpt-clerk-zustand-mongoDB
 
 ## how to use project
 
