@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+}
+.cl-cardBox {
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+  border-radius: 10px !important;
+}
+.global-spinner .ant-spin-dot-item {
+  background-color: #242424 !important;
+}
+.ant-drawer-content {
+  background-color: #202222 !important;
+}
+.ant-drawer-close {
+  color: white !important;
+}
+/* scroll styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #4b4b4b;
+}
+::-webkit-scrollbar-thumb {
+  background: #818181;
+}

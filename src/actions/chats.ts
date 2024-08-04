@@ -1,0 +1,63 @@
+'use server'
+
+import ChatModel from '@/models/chat-model';
+
+export const createNewChat = async (payload: any) => {
+  try {
+    const response = await ChatModel.create(payload);
+    return {
+      data: JSON.parse(JSON.stringify(response)),
+      success: true,
+    }
+  } catch (error: any) {
+    return {
+      message: error.message,
+      success: false
+    }
+  }
+}
+
+export const getChatsByUserId = async (userId: string) => {
+  try {
+    const response = await ChatModel.find({user: userId}).sort({ createdAt: -1});
+    return {
+      data: JSON.parse(JSON.stringify(response)),
+      success: true,
+    }
+  } catch (error: any) {
+    return {
+      message: error.message,
+      success: false
+    }
+  }
+}
+
+export const updateChat = async ({ chatId="", message=[] }: { chatId: string, message: any[] }) => {
+  try {
+    const response = await ChatModel.findByIdAndUpdate(chatId, {messages}, {new: true});
+    return {
+      data: JSON.parse(JSON.stringify(response)),
+      success: true,
+    }
+  } catch (error: any) {
+    return {
+      message: error.message,
+      success: false
+    }
+  }
+}
+
+export const deleteChat = async (chatId: StringConstructor) => {
+  try {
+    const response = await ChatModel.findByIdAndDelete(chatId);
+    return {
+      data: JSON.parse(JSON.stringify(response)),
+      success: true,
+    }
+  } catch (error: any) {
+    return {
+      message: error.message,
+      success: false
+    }
+  }
+}
