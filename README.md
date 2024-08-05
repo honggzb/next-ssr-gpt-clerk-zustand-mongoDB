@@ -4,4 +4,4 @@
 
 1. `npm i`
 2. `npm run dev`
-3. need creat '.env' by yourself
+3. need modify '.env' by yourself
